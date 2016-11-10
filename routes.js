@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var todoModel = require('./database');
 
-// router.get('/',function(req,res){
-// 	res.redirect('/api/gettodo'); 
-// });
+router.get('/',function(req,res){
+	res.redirect('/api/gettodo'); 
+});
 
 //get all notes
 router.get('/gettodo',function(req,res){

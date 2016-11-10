@@ -15,8 +15,8 @@ app.use(bodyParser.json());
 app.use('/api',router);
 
 app.get('/', function(req, res) {
-	// console.log('redirectin to /api');
-	res.send('Hello World');  
+	console.log('redirectin to /api');
+	res.redirect('/api');  
 });
 
 //404 page redirection
