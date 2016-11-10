@@ -1,5 +1,5 @@
 {
-  "name": "eplore API",
+  "name": "expose",
   "version": "0.1.1",
   "description": "This is the Backend Restfull API for my final project. Bachelor Degree",
   "engines": {
@@ -10,16 +10,18 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "mongoose": "^4.6.6"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/cp3junior/expose"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "mongodb"
   ],
   "license": "MIT"
 }

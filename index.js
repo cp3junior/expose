@@ -9,8 +9,8 @@ app.use(express.static(__dirname + '/public'));
 // app.set('views', __dirname + '/views');
 // app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
-  response.send('hello World');
+app.get('/', function(req, res) {
+  res.send('Hello world');
 });
 
 app.listen(app.get('port'), function() {

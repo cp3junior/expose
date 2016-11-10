@@ -1,8 +1,8 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "",
+  "name": "epose API",
+  "description": "This is the Backend Restfull API for my final project. Bachelor Degree",
+  "repository": "https://github.com/cp3junior/expose",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
+  "keywords": ["node", "express", "api", "mongodb", "online shop"],
   "image": "heroku/nodejs"
 }
