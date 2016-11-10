@@ -33,7 +33,7 @@ router.get('/gettodo/:id_todo',function(req,res){
 
 //add note
 router.post('/addtodo/:title/:note',function(req,res){
-
+	console.log(req.params.title);
 	var data = {
 		title: req.params.title,
 		note: req.params.note 
