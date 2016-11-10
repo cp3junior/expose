@@ -45,3 +45,4 @@ jspm_packages
 # Docker
 Dockerfile
 docker-compose.yml
+credentials.js
