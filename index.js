@@ -1,51 +1,30 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var cred = require('./credentials');
+var database = require('./database');
+var router = require('./routes');
 
-mongoose.connect('mongodb://cp3junior:cp3killerCROSS@ds050559.mlab.com:50559/expose');
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-	console.log('database connected');
-});
-
-var schemaUser = mongoose.Schema({
-	name: String,
-	email: String
-});
-var userModel = mongoose.model('userModel', schemaUser);
-
-
-
-app.set('port', (process.env.PORT || 5000));
-
+app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'ejs');
-
-var me = {
-	name: "andrew",
-	email: "r3andrew@gmail.com"
-};
+app.set('port', (process.env.PORT || 5000));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use('/api',router);
 
 app.get('/', function(req, res) {
-  //var data = new userModel(me);
-  //data.save();
-
-  // var out = {};
-
-  userModel.find(function(err, resp){
-  	if (err){
-  		res.send(err);
-  	}
-  	res.json(resp);
-  });
-
-  
+	console.log('redirectin to /api');
+	res.redirect('/api');  
 });
+
+//404 page redirection
+// app.use(function(req,res,next){
+// 	console.log('404 not found, redirection to root');
+// 	res.redirect('/api');  
+// 	next();
+// });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
