@@ -1,0 +1,25 @@
+{
+  "name": "eplore API",
+  "version": "0.1.1",
+  "description": "This is the Backend Restfull API for my final project. Bachelor Degree",
+  "engines": {
+    "node": "4.5.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "4.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
