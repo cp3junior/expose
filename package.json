@@ -12,6 +12,7 @@
   "author": "RAILALA Andriatsimarivo (Andrew)",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
     "express": "4.13.3",
     "mongoose": "^4.6.6",
     "morgan": "^1.7.0"

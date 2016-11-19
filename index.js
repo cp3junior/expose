@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var cors = require('cors');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
@@ -7,6 +8,8 @@ var cred = require('./credentials');
 var database = require('./database');
 var router = require('./routes');
 
+
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 app.set('port', (process.env.PORT || 5000));
