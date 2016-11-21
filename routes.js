@@ -1,6 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var todoModel = require('./database');
+var cors = require('cors');
+
+
+// app.del('/products/:id', cors(), function(req, res, next){
+//   res.json({msg: 'This is CORS-enabled for all origins!'});
+// });
+
 
 router.get('/',function(req,res){
 	res.redirect('/api/gettodo'); 
@@ -32,7 +39,9 @@ router.get('/gettodo/:id_todo',function(req,res){
 });
 
 //add note
-router.post('/addtodo',function(req,res){
+router.options('/addtodo', cors()); // enable pre-flight request for DELETE request
+
+router.post('/addtodo',cors(), function(req,res){
 	// console.log(req.body.title);
 	var data = {
 		title: req.body.title,
