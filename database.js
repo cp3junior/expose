@@ -6,6 +6,7 @@ var dbPass = cred.c.dbPass;
 // mongoose.connect('mongodb://'+dbUser+':'+dbPass+'@ds157667.mlab.com:57667/exposedb');
 mongoose.connect('mongodb://'+dbUser+':'+dbPass+'@ds050559.mlab.com:50559/expose');
 
+
 //mongodb://<dbuser>:<dbpassword>@ds157667.mlab.com:57667/exposedb
 
 var db = mongoose.connection;

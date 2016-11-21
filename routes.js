@@ -32,11 +32,11 @@ router.get('/gettodo/:id_todo',function(req,res){
 });
 
 //add note
-router.post('/addtodo/:title/:note',function(req,res){
-	console.log(req.params.title);
+router.post('/addtodo',function(req,res){
+	// console.log(req.body.title);
 	var data = {
-		title: req.params.title,
-		note: req.params.note 
+		title: req.body.title,
+		note: req.body.note 
 	};
 
 	var db = new todoModel(data);
