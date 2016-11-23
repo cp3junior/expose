@@ -42,37 +42,34 @@ router.get('/gettodo/:id_todo',function(req,res){
 router.options('/addtodo', cors()); // enable pre-flight request for DELETE request
 
 router.post('/addtodo',cors(), function(req,res){
-	// console.log(req.body.title);
 	var data = {
 		title: req.body.title,
 		note: req.body.note 
 	};
 
 	var db = new todoModel(data);
-  	db.save(function(err){
+  	db.save(function(err,doc){
   		if(err){
   			res.json({err: 'An error occured'});
-			console.log(err);
   		}else{
-  			res.json({message: 'Data saved successfuly'});
+  			res.json(doc);
   		}
-  	});
-	
+  	});	
 });
 
 //update note
-router.put('/edittodo/:id_todo/:title/:note',function(req,res){
+router.put('/edittodo/:id_todo',function(req,res){
 	var id = req.params.id_todo;
 	var data = {
-		title: req.params.title,
-		note: req.params.note 
+		title: req.body.title,
+		note: req.body.note 
 	};
 	todoModel.findOneAndUpdate({ _id: id },data, function(err, resp){
 		if (err){
 			res.json({err: 'An error occured'});
 			console.log(err);
 		}else{
-			res.json({message: 'Data updated successfuly'});
+			res.json(resp);
 		}
 	});
 });
